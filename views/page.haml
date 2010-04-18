@@ -18,5 +18,6 @@
 	%a{:href => '/contents'}= Page.page_number(@page)
 	
 .pen
-	%a{:href => "#{@edit_link}"}
-		%img{:src => "/images/fountainpen.gif", :border => 0}
+	- if @can_edit
+		%a{:href => "#{@edit_link}"}
+			%img{:src => "/images/fountainpen.gif", :border => 0}

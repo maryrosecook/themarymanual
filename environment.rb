@@ -8,12 +8,7 @@ require 'ostruct'
 
 require 'sinatra' unless defined?(Sinatra)
 
-DataMapper.setup(:default, {
-  :adapter  => 'mysql',
-  :host     => 'localhost',
-  :username => 'root' ,
-  :password => '',
-  :database => 'themarymanual_development'})
+require 'database'
 
 configure do
   SiteConfig = OpenStruct.new(
@@ -21,6 +16,8 @@ configure do
                  :author => 'maryrosecook',
                  :url_base => 'http://localhost:4567/'
                )
+
+  enable :sessions
 
   # load models
   $LOAD_PATH.unshift("#{File.dirname(__FILE__)}/model")

@@ -30,6 +30,10 @@ class Page
     return page_number
   end
   
+  def self.contents
+    return Page.all(:order => [ :created_at.asc ])
+  end
+  
   def formatted_body
     return Kramdown::Document.new(self.body).to_html
   end

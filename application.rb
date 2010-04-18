@@ -27,7 +27,13 @@ get '/' do
 end
 
 get "/contents" do
+  @pages = Page.contents()
   haml :contents
+end
+
+get "/editmode:onoroff" do
+  session["edit_mode"] = params[:onoroff] == "on" ? true : false
+  redirect "/contents"
 end
 
 post "/page/create/:slug" do
@@ -62,6 +68,10 @@ end
 get "/page/:slug" do
   slug = params[:slug]
   @page = Page.first(:conditions => { :slug => slug })
-  @edit_link = @page ? "/page/edit/#{slug}" : "/page/create/#{slug}"
+  @can_edit = session["edit_mode"]
+  if @can_edit
+    @edit_link = @page ? "/page/edit/#{slug}" : "/page/create/#{slug}"
+  end
+  
   haml :page
 end

@@ -26,6 +26,7 @@ sudo gem install shotgun
 sudo gem install haml
 sudo gem install do_mysql
 sudo gem install kramdown
+sudo gem install dm-yaml-adapter
 
 mysql --user=root
 create database themarymanual_development;

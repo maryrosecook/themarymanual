@@ -1,0 +1,14 @@
+.header
+	%a{:href => '/'}= SiteConfig.title
+
+.page_content
+	.contents_content
+		%h2= "Contents"
+		
+		.contents_items
+			- for page in @pages
+				.contents_item
+					%a{:href => "/page/#{page.slug}"}= page.title
+
+.footer
+	%a{:href => '/contents'}= Page.page_number(@page)
