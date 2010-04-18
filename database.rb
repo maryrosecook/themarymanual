@@ -1,6 +1,1 @@
-DataMapper.setup(:default, ENV['DATABASE_URL'] || {
-  :adapter  => 'mysql',
-  :host     => 'localhost',
-  :username => 'root' ,
-  :password => '',
-  :database => 'themarymanual'})
+DataMapper.setup(:default, ENV['DATABASE_URL'] || "mysql://root@localhost/themarymanual?encoding=utf8")
