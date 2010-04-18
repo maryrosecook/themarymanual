@@ -1,0 +1,22 @@
+.header
+	%a{:href => '/'}= SiteConfig.title
+
+.page_content
+	- if @editing
+		%form{ :action => "", :method => "post"}
+			%input{:type => "text", :name => "title", :value => "#{@page.title}", :class => "text_field"}
+			%br
+			%textarea{:name => "body" }= @page.body
+	- else
+		- if @page.id
+			%h2= @page.title
+			%p= @page.formatted_body
+		- else
+			%h2= "No page found"
+
+.footer
+	%a{:href => '/contents'}= Page.page_number(@page)
+	
+.pen
+	%a{:href => "#{@edit_link}"}
+		%img{:src => "/images/fountainpen.gif", :border => 0}
