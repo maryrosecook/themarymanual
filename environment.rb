@@ -8,8 +8,6 @@ require 'ostruct'
 
 require 'sinatra' unless defined?(Sinatra)
 
-require 'database'
-
 configure do
   SiteConfig = OpenStruct.new(
                  :title => 'The Mary Manual',
@@ -18,6 +16,8 @@ configure do
                )
 
   enable :sessions
+  
+  DataMapper.setup(:default, ENV['DATABASE_URL'] || "mysql://root@localhost/themarymanual?encoding=utf8")
 
   # load models
   $LOAD_PATH.unshift("#{File.dirname(__FILE__)}/model")
