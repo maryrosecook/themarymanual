@@ -31,6 +31,13 @@ get "/contents" do
   haml :contents
 end
 
+post "/set_password/:password" do
+  if !Property.get_("password") && params[:password] # can only set password if not already set
+    Property.set_("password", params[:password])
+    flash[:notice] = "Your password was set and you were logged in."
+    redirect "/hand_writing"
+  end
+
 post "/page/create/:slug" do
   page = Page.create(params)
   page.save
