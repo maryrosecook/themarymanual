@@ -37,3 +37,5 @@ textarea { font-family:'Lucida Sans Unicode', 'Lucida Grande'; width:429px; heig
 
 .footer { margin:0 7px 0 7px; padding:3px 0 3px 0; font-size:0.75em; text-align:right; border-top:1px solid #ccc; }
 .footer a { text-decoration:none; }
+.lock { float:left; }
+.page_number { float:right; }

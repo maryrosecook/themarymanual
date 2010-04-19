@@ -15,7 +15,11 @@
 			%h2= "No page found"
 
 .footer
-	%a{:href => '/contents'}= Page.page_number(@page)
+	.lock
+		%a{:href => "/login"}
+			%img{:src => "/images/padlock.gif", :border => 0}
+	.page_number
+		%a{:href => '/contents'}= Page.page_number(@page)
 	
 .pen
 	- if @can_edit

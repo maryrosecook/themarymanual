@@ -37,6 +37,11 @@ post "/set_password/:password" do
     flash[:notice] = "Your password was set and you were logged in."
     redirect "/hand_writing"
   end
+end
+
+post "/login/:password" do
+  
+end
 
 post "/page/create/:slug" do
   page = Page.create(params)
