@@ -75,7 +75,3 @@ get "/page/:slug" do
   
   haml :page
 end
-
-get '/env' do
-  ENV.inspect
-end

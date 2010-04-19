@@ -17,7 +17,7 @@ configure do
 
   enable :sessions
   
-  DataMapper.setup(:default, ENV['DATABASE_URL'])
+  DataMapper.setup(:default, ENV['DATABASE_URL'] || "mysql://root@localhost/themarymanual?encoding=utf8")
 
   # load models
   $LOAD_PATH.unshift("#{File.dirname(__FILE__)}/model")
