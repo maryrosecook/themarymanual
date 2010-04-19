@@ -5,6 +5,9 @@ require 'dm-validations'
 require 'dm-aggregates'
 require 'haml'
 require 'ostruct'
+require "digest/sha1"
+require 'rack-flash'
+require "sinatra-authentication"
 
 require 'sinatra' unless defined?(Sinatra)
 
@@ -15,7 +18,9 @@ configure do
                  :url_base => 'http://localhost:4567/'
                )
 
-  enable :sessions
+  # for sinatra-authentication
+  use Rack::Session::Cookie, :secret => 'duiwbidubwdadbwawi8'
+  use Rack::Flash
   
   DataMapper.setup(:default, ENV['DATABASE_URL'] || "mysql://root@localhost/themarymanual?encoding=utf8")
 

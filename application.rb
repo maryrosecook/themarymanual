@@ -31,11 +31,6 @@ get "/contents" do
   haml :contents
 end
 
-get "/editmode:onoroff" do
-  session["edit_mode"] = params[:onoroff] == "on" ? true : false
-  redirect "/contents"
-end
-
 post "/page/create/:slug" do
   page = Page.create(params)
   page.save
