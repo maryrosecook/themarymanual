@@ -3,8 +3,8 @@
 	%head
 		%title{:id => "logo"}= @title || SiteConfig.title
 		%link{ :href => '/main.css', :rel => 'stylesheet', :type => 'text/css'}
+		%link{ :href => '/main.js', :rel => 'script', :type => 'text/javascript'}
 	%body
-		
 		.container
 			- if !@no_page_header_or_footer
 				.page_header
@@ -13,7 +13,7 @@
 			.div=yield
 			- if !@no_page_header_or_footer
 				.page_footer
-					%a{:href => '/contents', :class => "page_number"}= Page.page_number(@page)
+					%a{:href => '/contents', :class => "page_number"}= @page_number || Page.page_number(@page)
 				
 		.main_footer
 			%ul{:class => "tabs"}

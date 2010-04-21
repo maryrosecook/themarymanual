@@ -6,3 +6,5 @@
 			- for page in @pages
 				.contents_item
 					%a{:href => "/page/#{page.slug}"}= page.title
+			- if @can_edit
+				%a{:href => "/page/create"}= "New page"

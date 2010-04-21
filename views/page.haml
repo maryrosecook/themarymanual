@@ -1,9 +1,9 @@
 .page_content
 	- if @editing
 		%form{ :action => "", :method => "post"}
-			%input{:type => "text", :name => "title", :value => "#{@page.title}", :class => "text_field", :style => "width:429px;"}
+			%input{:type => "text", :name => "title",:value => "#{@page.title}", :class => "text_field", :style => "width:408px;"}
 			%br
-			%textarea{:name => "body", :style => "width:429px; height:465px;"}= @page.body
+			%textarea{:name => "body", :style => "width:408px; height:460px;"}= @page.body
 	- else
 		- if @page.id
 			%h2= @page.title
@@ -13,5 +13,8 @@
 
 .pen
 	- if @can_edit
-		%a{:href => "#{@edit_link}"}
+		%a{:href => "/page/edit/#{@page.slug}"}
 			%img{:src => "/images/fountainpen.gif", :border => 0}
+	- elsif @can_delete
+		%a{:href => "/page/delete/#{@page.slug}"}
+			%img{:src => "/images/crossout.jpg", :border => 0}
