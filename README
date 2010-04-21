@@ -1,0 +1,33 @@
+The Mary Manual
+A really simple pretend book.
+
+See it running: http://themarymanual.com
+
+By: maryrosecook
+http://maryrosecook.com
+maryrosecook@maryrosecook.com
+
+---
+
+Initial setup
+
+	- Install the gems you need
+	  - In your console
+	    sudo gem install sinatra datamapper shotgun haml do_mysql kramdown
+		
+	- Create your database
+	  - In your console
+			mysql --user=root
+			create database themarymanual;
+
+	- Set up your database schema
+		- In your console (make sure you have left the mysql environment)
+			cd root/of/themarymanual
+			rake db:migrate
+				
+Run the app
+
+	- Run the app
+		- In your console
+			cd root/of/themarymanual
+			shotgun -p 4567 application.rb
