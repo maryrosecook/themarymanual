@@ -15,7 +15,7 @@ class Page
   
   def self.page_number(in_page)
     page_number = "?"
-    i = 1
+    i = 2 # contents page is page 1
     if in_page # actually on a page so find its num
       for page in Page.all(:order => [ :created_at.asc ])
         if in_page == page

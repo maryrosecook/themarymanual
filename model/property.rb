@@ -8,12 +8,12 @@ class Property
 
   validates_present :identifier
   
-  def self.set_(identifier, value)
-    property = self.create("identifier" => identifier, "value" => value)
+  def self.set_p(identifier, value)
+    property = Property.create("identifier" => identifier, "value" => value)
     return property.save()
   end
   
-  def self.get_(identifer)
-    return self.first(:conditions => { :identifer => identifer })
+  def self.get_p(identifer)
+    return Property.first(:conditions => { :identifier => identifer })
   end
 end

@@ -4,4 +4,22 @@
 		%title{:id => "logo"}= @title || SiteConfig.title
 		%link{ :href => '/main.css', :rel => 'stylesheet', :type => 'text/css'}
 	%body
-		.container= yield
+		
+		.container
+			- if !@no_page_header_or_footer
+				.page_header
+					%a{:href => '/'}= SiteConfig.title
+					
+			.div=yield
+			- if !@no_page_header_or_footer
+				.page_footer
+					%a{:href => '/contents', :class => "page_number"}= Page.page_number(@page)
+				
+		.main_footer
+			%ul{:class => "tabs"}
+				%a{:href => "/contents"}
+					%li{:class => "tab"}="contents"
+				%a{:href => "/ex_libris"}
+					%li{:class => "tab"}="ex libris"
+				%a{:href => "/hidden_compartment"}
+					%li{:class => "tab"}="hidden"

@@ -19,8 +19,10 @@ configure do
   enable :sessions
 
   use Rack::Flash
-  
+
   DataMapper.setup(:default, ENV['DATABASE_URL'] || "mysql://root@localhost/themarymanual?encoding=utf8")
+
+  set :views, "#{File.dirname(__FILE__)}/views"
 
   # load models
   $LOAD_PATH.unshift("#{File.dirname(__FILE__)}/model")

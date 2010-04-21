@@ -1,0 +1,13 @@
+.page_content
+	%h2= "Hidden compartment"
+
+	- if @logged_in
+		%p= "You are logged in."
+	- elsif @password_set
+		%form{:action => "/login", :method => "post"}
+			%input{:name => "password", :class => "text_field"}
+			%submit{:name => "submit", :class => "submit_button"}="Login"
+	- else
+		%form{:action => "/set_password", :method => "post"}
+			%input{:name => "password", :class => "text_field"}
+			%submit{:name => "submit", :class => "submit_button"}="Set this password"

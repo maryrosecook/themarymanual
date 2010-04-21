@@ -1,25 +1,35 @@
-div,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,table{ margin:0; padding:0; }
+div,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,table,ul,li{ margin:0; padding:0; }
 input,form { display:inline; }
 
 body { font-family:'Lucida Sans Unicode', 'Lucida Grande'; font-size:12px; color:#555;  }
 p { line-height:16px; text-align:justify; margin:0 0 12px; }
 
 a { color: #555; text-decoration:underline; }
-a:hover { text-decoration:none; }
+a:hover { text-decoration:none; margin:0; padding:0; }
 
 h1 { font-size: 2.2em; font-weight:normal; }
 h2 { font-size: 1.3em; font-weight:normal; margin:5px 0 8px 0; }
 h3 { font-size: 1.1em; font-weight:normal; }
 
-.container { margin:0 auto; margin-top:35px; margin-bottom:25px; width:450px; height:600px; border:1px solid #ccc; }
+.container { margin:0 auto; margin-top:35px; width:430px; height:550px; border:1px solid #ccc; }
 
-.cover_title { text-align:center; font-size:4.1em; margin-top:20px; color:#555; }
-.cover_title a { text-decoration: none; cursor:pointer; }
-.cover_content { height: 470px; padding:10px; }
-.cover_sub_title { text-align:right; padding-right:12px; padding-top:475px; }
-.cover_sub_title a { text-decoration: none; cursor:pointer;  }
+.main_footer { margin-left:auto; margin-right:auto; text-align:right; width:450px; padding-right:19px;  }
 
-.page_content { height: 550px; padding:7px; }
+.tabs ul { display: block;  }
+.tabs li { color:#777; padding:1px 5px 1px 5px; margin:-1px 0 0 0; border-top:1px solid #ccc; border-bottom: 1px solid #cecbc6; border-right: 1px solid #cecbc6; border-left: 1px solid #cecbc6; display: block; float: right; position: relative; -moz-border-radius-bottomleft:4px; -moz-border-radius-bottomright:4px; -webkit-border-bottom-left-radius:4px; -webkit-border-bottom-right-radius:4px; }
+.tabs a { text-decoration:none; }
+
+.cover_title { text-align:center; font-size:4.1em; margin-top:10px; color:#555; }
+.cover_title a { text-decoration:none; cursor:pointer; }
+
+.cover_content { height: 430px; padding:40px 10px 0 10px; width:410px; }
+
+.cover_image { margin-left:auto; margin-right:auto; width:191px; }
+
+.cover_sub_title { text-align:right; font-size:12px; padding-right:14px; margin-top:58px; }
+.cover_sub_title a { text-decoration:none; cursor:pointer;  }
+
+.page_content { height: 500px; padding:7px; }
 LI { line-height:16px; list-style:none; margin:0 0 0 -40px; } 
 
 .pen { float:right; margin:-450px -200px 0 0; }
@@ -28,14 +38,15 @@ LI { line-height:16px; list-style:none; margin:0 0 0 -40px; }
 .contents_items { margin:20px 0 0 20px; line-height:16px; }
 .contents_item a { text-decoration:none; cursor:pointer; }
 
-.text_field { font-family:'Lucida Sans Unicode', 'Lucida Grande'; width:429px; margin:0 0 3px 0;  border:1px solid #ccc; padding:3px; font-size:12px; }
-.submit_button { font-family:'Lucida Sans Unicode', 'Lucida Grande'; border: 1px solid #ccc; margin:3 0 0 0; font-size:12px; background:#FFF; color:#ccc; cursor:pointer; padding:1px 2px 0px 2px; }
-textarea { font-family:'Lucida Sans Unicode', 'Lucida Grande'; width:429px; height:515px; border:1px solid #ccc; font-size: 12px; margin:4px 0 0 0; padding:3px; }
+.text_field { font-family:'Lucida Sans Unicode', 'Lucida Grande'; margin:0 0 3px 0;  border:1px solid #ccc; padding:3px; font-size:12px; }
+.submit_button { font-family:'Lucida Sans Unicode', 'Lucida Grande'; border: 1px solid #ccc; margin:3 0 0 0; font-size:12px; background:#FFF; color:#555; cursor:pointer; padding:3px 5px 3px 5px; }
+textarea { font-family:'Lucida Sans Unicode', 'Lucida Grande'; border:1px solid #ccc; font-size: 12px; margin:4px 0 0 0; padding:3px; }
 
-.header { margin:0 7px 0 7px; padding:3px 0 3px 0; font-size:0.75em; text-align:center; border-bottom:1px solid #ccc; }
-.header a { text-decoration:none; }
+.page_header { margin:0 7px 0 7px; padding:3px 0 3px 0; font-size:0.75em; text-align:center; border-bottom:1px solid #ccc; }
+.page_header a { text-decoration:none; }
 
-.footer { margin:0 7px 0 7px; padding:3px 0 3px 0; font-size:0.75em; text-align:right; border-top:1px solid #ccc; }
-.footer a { text-decoration:none; }
-.lock { float:left; }
-.page_number { float:right; }
+.page_footer { margin:0 7px 0 7px; padding:3px 0 3px 0; font-size:0.75em; text-align:right; border-top:1px solid #ccc; }
+.page_footer a { text-decoration:none; }
+
+.page_number a { float:right; }
+

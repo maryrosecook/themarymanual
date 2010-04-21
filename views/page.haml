@@ -1,12 +1,9 @@
-.header
-	%a{:href => '/'}= SiteConfig.title
-
 .page_content
 	- if @editing
 		%form{ :action => "", :method => "post"}
-			%input{:type => "text", :name => "title", :value => "#{@page.title}", :class => "text_field"}
+			%input{:type => "text", :name => "title", :value => "#{@page.title}", :class => "text_field", :style => "width:429px;"}
 			%br
-			%textarea{:name => "body" }= @page.body
+			%textarea{:name => "body", :style => "width:429px; height:465px;"}= @page.body
 	- else
 		- if @page.id
 			%h2= @page.title
@@ -14,13 +11,6 @@
 		- else
 			%h2= "No page found"
 
-.footer
-	.lock
-		%a{:href => "/login"}
-			%img{:src => "/images/padlock.gif", :border => 0}
-	.page_number
-		%a{:href => '/contents'}= Page.page_number(@page)
-	
 .pen
 	- if @can_edit
 		%a{:href => "#{@edit_link}"}
