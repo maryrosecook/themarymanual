@@ -5,7 +5,6 @@ require 'dm-validations'
 require 'dm-aggregates'
 require 'haml'
 require 'ostruct'
-require 'rack-flash'
 
 require 'sinatra' unless defined?(Sinatra)
 
@@ -17,8 +16,6 @@ configure do
                )
 
   enable :sessions
-
-  use Rack::Flash
 
   DataMapper.setup(:default, ENV['DATABASE_URL'] || "mysql://root@localhost/themarymanual?encoding=utf8")
 
