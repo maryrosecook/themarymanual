@@ -1,1 +1,2 @@
 kramdown
+sinatra --version '>= 1.0'
