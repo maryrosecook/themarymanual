@@ -78,7 +78,7 @@ post "/page/edit/:slug" do
   redirect "/hidden_compartment" if !session["logged_in"]
   
   page = Page.first(:conditions => { :slug => params[:slug] })
-  page.update(params)
+  page.update_with(params)
   page.save
   redirect "/page/#{page.slug}"
 end

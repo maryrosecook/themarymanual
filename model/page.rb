@@ -31,6 +31,11 @@ class Page
     return page_number
   end
   
+  def update_with(params)
+    self.title = params[:title]
+    self.body = params[:body]
+  end
+  
   def set_slug
     base_slug = self.title.downcase.gsub(/\W/, "")
     slug_try = base_slug
