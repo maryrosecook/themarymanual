@@ -38,9 +38,9 @@ LI { line-height:16px; list-style:none; margin:0 0 0 -40px; }
 .contents_items { margin:20px 0 0 20px; line-height:16px; }
 .contents_item a { text-decoration:none; cursor:pointer; }
 
-.text_field { font-family:'Lucida Sans Unicode', 'Lucida Grande'; color:#555; margin:0 0 7px 0;  border:1px solid #ccc; padding:3px; font-size:12px; }
-textarea { font-family:'Lucida Sans Unicode', 'Lucida Grande'; color:#555; border:1px solid #ccc; font-size: 12px; margin:0 0 7px 0;  padding:3px; }
-.submit_button { font-family:'Lucida Sans Unicode', 'Lucida Grande'; border: 1px solid #ccc; margin:3px 0 0 0; font-size:12px; background:#FFF; color:#555; cursor:pointer; padding:3px 5px 3px 5px; }
+.text_field { font-family:'Lucida Sans Unicode', 'Lucida Grande'; color:#555; width:145px; margin:0 0 7px 0;  border:1px solid #ccc; padding:3px; font-size:12px; }
+textarea { font-family:'Lucida Sans Unicode', 'Lucida Grande'; color:#555; border:1px solid #ccc; font-size:12px; margin:0 0 7px 0; padding:3px; }
+.submit_button { font-family:'Lucida Sans Unicode', 'Lucida Grande'; border:1px solid #ccc; font-size:12px; line-height:1.45em;  background:#FFF; color:#555; cursor:pointer; padding:2px 5px 2px 5px; }
 
 .page_header { margin:0 7px 0 7px; padding:3px 0 3px 0; font-size:0.75em; text-align:center; border-bottom:1px solid #ccc; }
 .page_header a { text-decoration:none; }

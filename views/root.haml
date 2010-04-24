@@ -1,9 +1,9 @@
 .cover_title
-	%a{:href => "/contents"}= SiteConfig.title
+	%a{:href => "/contents"}= @site_title
 
 .cover_content
 	.cover_image
-		%a{:href => "/contents"}="<img src='/images/heart.jpg' width=191 height=346 border=0 />"
+		%a{:href => "/contents"}="<img src='#{@cover_image_src}' width=191 height=346 border=0 />"
 		
 	.cover_sub_title
-		%a{:href => "/contents"}= "A practical and impractical guide"
+		%a{:href => "/contents"}= @site_sub_title

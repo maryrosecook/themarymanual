@@ -13,7 +13,9 @@ end
 
 get '/' do
   @no_page_header_or_footer = true
-  @title = SiteConfig.title
+  @site_title = Properties["title"]
+  @cover_image_src = Properties["coverimage"]
+  @site_sub_title = Properties["subtitle"]
   haml :root
 end
 
@@ -35,21 +37,20 @@ end
 
 get "/hidden_compartment" do
   @page_number = "?"
-  @password_set = Property.get_p("password")
+  @password_set = Properties["password"]
   @logged_in = session["logged_in"]
   haml :hidden_compartment
 end
 
-post "/set_password" do
-  if !Property.get_p("password") && params[:password] # can only set password if not already set
-    Property.set_p "password", params[:password]
-  end
+post "/set_property" do
+  redirect "/hidden_compartment" if !session["logged_in"]
+  Property.set_p params[:identifier], params[:value]
   redirect "/hidden_compartment"
 end
 
 post "/login" do
-  real_password = Property.get_p("password")
-  if real_password.value == params[:password] # can only set password if not already set
+  real_password = Property["password"]
+  if real_password == params[:password] # can only set password if not already set
     session["logged_in"] = true
   end
   redirect "/hidden_compartment"

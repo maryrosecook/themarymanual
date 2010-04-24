@@ -1,13 +1,13 @@
 !!!
 %html
 	%head
-		%title{:id => "logo"}= @title || SiteConfig.title
+		%title{:id => "logo"}= @title || Properties["title"]
 		%link{ :href => '/main.css', :rel => 'stylesheet', :type => 'text/css'}
 	%body
 		.container
 			- if !@no_page_header_or_footer
 				.page_header
-					%a{:href => '/'}= SiteConfig.title
+					%a{:href => '/'}= Properties["title"]
 					
 			.div=yield
 			- if !@no_page_header_or_footer

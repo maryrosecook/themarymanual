@@ -3,11 +3,18 @@
 
 	- if @logged_in
 		%p= "Your pen has ink."
+		- for site_property_identifier in Properties.keys
+			%form{:action => "/set_property", :method => "post"}
+				%input{:name => "identifier", :class => "text_field", :value => site_property_identifier}
+				%input{:name => "value", :class => "text_field", :value => Properties[site_property_identifier]}
+				%input{:type => "submit", :value => "Set property", :class => "submit_button"}
+				%br
 	- elsif @password_set
 		%form{:action => "/login", :method => "post"}
 			%input{:name => "password", :class => "text_field"}
-			%submit{:name => "submit", :class => "submit_button"}="Say the password"
+			%input{:type => "submit", :value => "Say the password", :class => "submit_button"}
 	- else
-		%form{:action => "/set_password", :method => "post"}
-			%input{:name => "password", :class => "text_field"}
-			%submit{:name => "submit", :class => "submit_button"}="Set this password"
+		%form{:action => "/set_property", :method => "post"}
+			%input{:type => "hidden", :name => "identifier", :value => "password"}
+			%input{:name => "value", :class => "text_field"}
+			%input{:type => "submit", :value => "Set password", :class => "submit_button"}
