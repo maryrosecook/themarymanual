@@ -43,13 +43,13 @@ get "/hidden_compartment" do
 end
 
 post "/set_property" do
-  redirect "/hidden_compartment" if !session["logged_in"]
+  redirect "/hidden_compartment" if !session["logged_in"] && Properties["password"] # redirect if not logged in + p/w set
   Property.set_p params[:identifier], params[:value]
   redirect "/hidden_compartment"
 end
 
 post "/login" do
-  real_password = Property["password"]
+  real_password = Properties["password"]
   if real_password == params[:password] # can only set password if not already set
     session["logged_in"] = true
   end
