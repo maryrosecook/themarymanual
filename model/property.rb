@@ -1,7 +1,7 @@
 # basic config
 class Property
   include DataMapper::Resource
-
+  
   property :id,         Serial
   property :identifier, String, :length => 300
   property :value,  	  String, :length => 300

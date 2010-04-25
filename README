@@ -19,6 +19,8 @@ Initial setup
 	  - In your console
 			mysql --user=root
 			create database themarymanual;
+			create table pages(id INT);
+			create table properties(id INT);
 
 	- Set up your database schema
 		- In your console (make sure you have left the mysql environment)

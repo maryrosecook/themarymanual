@@ -10,7 +10,7 @@ require 'sinatra' unless defined?(Sinatra)
 configure do
   enable :sessions
 
-  DataMapper.setup(:default, ENV['DATABASE_URL'] || "mysql://root@localhost/cookongrammar")
+  DataMapper.setup(:default, ENV['DATABASE_URL'] || "mysql://root@localhost/themarymanual")
   
   set :views, "#{File.dirname(__FILE__)}/views"
 
