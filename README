@@ -33,3 +33,36 @@ Run the app
 		- In your console
 			cd root/of/themarymanual
 			shotgun -p 4567 application.rb
+			
+Instructions
+
+	- Set a password
+		- Go to http://localhost:4567/hidden_compartment
+		- Enter a password
+	
+	- Log in
+		- Go to http://localhost:4567/hidden_compartment
+		- Enter your password
+		
+	- Set up your book
+		- Enter a title and submit it
+		- Enter a subtitle and submit it
+		- Enter a value for exlibris and submit it
+		
+	- Create a new page
+		- Log in
+		- Go to http://localhost:4567/contents
+		- Click the fountain pen
+		
+	- Edit a page
+		- Log in
+		- Go to http://localhost:4567/contents
+		- Click the page you want to edit
+		- Click the fountain pen
+
+	- Delete a page
+		- Log in
+		- Go to http://localhost:4567/contents
+		- Click the page you want to edit
+		- Click the fountain pen
+		- Click the cross
