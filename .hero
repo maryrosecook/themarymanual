@@ -5,5 +5,5 @@ read MESSAGE
 stty $stty_orig
 git add -A
 git commit -m "$MESSAGE"
-git push
+git push git@github.com:maryrosecook/themarymanual.git
 git push heroku
