@@ -42,6 +42,10 @@ class Page
     str = str.gsub("\342\200\234", '"')
     str = str.gsub("\342\200\235", '"')
     str = str.gsub("\x91\x0D\x0A", "'")
+    str = str.gsub("\x92\x0D\x0A", "'")
+    str = str.gsub("\x91", "'")
+    str = str.gsub("\x92", "'")
+
     return str
   end
   
