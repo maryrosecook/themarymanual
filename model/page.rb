@@ -32,8 +32,17 @@ class Page
   end
   
   def update_with(params)
-    self.title = params[:title]
-    self.body = params[:body]
+    self.title = self.esc params[:title]
+    self.body = self.esc params[:body]
+  end
+  
+  def esc(str)
+    str = str.gsub("\342\200\230", "'")
+    str = str.gsub("\342\200\231", "'")
+    str = str.gsub("\342\200\234", '"')
+    str = str.gsub("\342\200\235", '"')
+    str = str.gsub("\x91\x0D\x0A", "'")
+    return str
   end
   
   def set_slug

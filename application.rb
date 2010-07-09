@@ -61,7 +61,8 @@ end
 post "/page/create" do
   redirect "/hidden_compartment" if !session["logged_in"]
   
-  page = Page.create(params)
+  page = Page.create()
+  page.update_with(params)
   page.set_slug
   page.save
   redirect "/page/#{page.slug}"
